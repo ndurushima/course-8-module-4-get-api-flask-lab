@@ -12,7 +12,7 @@ products = [
 
 @app.route("/")
 def homepage():
-    return 'Welcome to the products page!'
+    return 'Welcome to the products page!', 200
 
 # TODO: Implement GET /products route that returns all products or filters by category
 
