@@ -28,7 +28,8 @@ def get_products():
 
 @app.route("/products/<int:id>")
 def get_product_by_id(id):
-    pass  # TODO: Return product by ID or 404
+    product = next((p for p in products if p.id == id), None)
+    return jsonify(product) if product else ("Product not found", 404)
 
 if __name__ == "__main__":
     app.run(debug=True)
